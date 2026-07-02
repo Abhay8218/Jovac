@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Trello</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="topbar">
+      <h1 class="topbar-title">My Board</h1>
+      <div class="topbar-right">
+        <div class="stats" id="stats"></div>
+        <button class="btn-ai" id="btn-ai-prioritize">✦ AI Prioritize</button>
+      </div>
+    </header>
+
+    <main class="board">
+
+      <div class="col" id="col-todo" data-col="todo">
+        <div class="col-header">
+          <span class="col-title">To Do</span>
+          <span class="col-count" id="count-todo">0</span>
+        </div>
+        <div class="col-body" id="body-todo"></div>
+      </div>
+
+      <div class="col" id="col-inprogress" data-col="inprogress">
+        <div class="col-header">
+          <span class="col-title col-title--blue">In Progress</span>
+          <span class="col-count" id="count-inprogress">0</span>
+        </div>
+        <div class="col-body" id="body-inprogress"></div>
+      </div>
+
+      <div class="col" id="col-done" data-col="done">
+        <div class="col-header">
+          <span class="col-title col-title--green">Completed</span>
+          <span class="col-count" id="count-done">0</span>
+        </div>
+        <div class="col-body" id="body-done"></div>
+      </div>
+
+    </main>
+
+    <div class="modal-bg hidden" id="modal-bg">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+        <h2 class="modal-heading" id="modal-heading">Add task</h2>
+
+        <div class="form-group">
+          <label for="input-title">Task name</label>
+          <input id="input-title" type="text" placeholder="What needs to be done?" />
+        </div>
+
+        <div class="form-group">
+          <label for="input-priority">Priority</label>
+          <select id="input-priority">
+            <option value="high">High</option>
+            <option value="med" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="col-group">
+          <label for="input-col">Column</label>
+          <select id="input-col">
+            <option value="todo">To Do</option>
+            <option value="inprogress">In Progress</option>
+            <option value="done">Completed</option>
+          </select>
+        </div>
+
+        <div class="ai-warning hidden" id="ai-warning"></div>
+
+        <div class="modal-btns">
+          <button class="btn-cancel" id="btn-cancel">Cancel</button>
+          <button class="btn-save" id="btn-save">Add task</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast toast--hidden"></div>
+
+    <script src="App.js"></script>
+  </body>
+</html>
