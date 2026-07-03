@@ -1,5 +1,5 @@
 const COLS = ['todo', 'inprogress', 'done'];
-const GROQ_API_KEY = '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';
+const GROQ_API_KEY = 'YOUR_GROQ_KEY';
 let tasks = loadTasks();
 let skipDuplicateCheck = false;
 
